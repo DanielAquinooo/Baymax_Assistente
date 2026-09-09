@@ -174,3 +174,25 @@ if ("serviceWorker" in navigator){
         });
     });
 }
+
+async function perguntaAoBaymax(pergunta) {
+    try{
+        const resposta = await fetch("http://localhost:3000/perguntar",{
+            
+            method: "POST",
+            Headers: {
+                    "Content-Type": "aplication/json"
+            },
+            body: JSON.stringify({
+                pergunta: pergunta
+            })
+        });
+
+        const dados = await resposta.json();
+        console.log("Respotas do servidor:", dados.resposta);
+        falar(dados.resposta);
+
+    } catch (erro) {
+        console.erro("Error ao conectar ao servidor:", erro);
+        falar("Não consegui me conectar ao servidor:");
+    }}
