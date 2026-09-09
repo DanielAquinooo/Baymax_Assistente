@@ -181,9 +181,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     };
 
-});
-
-//Para celular
+});
 
 if ("serviceWorker" in navigator){
 
