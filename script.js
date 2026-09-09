@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
                      if(conversaAtiva){
                             setTimeout(function(){
                                 reconhecimento.start();
-                } 500);
+                }, 500);
 
         window.speechSynthesis.speak(mensagem);
 
