@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("Você disse:", texto);
 
-        perguntarAoBaymax(texto);
+        perguntarAoBaymaxresponder(texto);
 
     };
 
