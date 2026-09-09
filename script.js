@@ -180,8 +180,8 @@ async function perguntaAoBaymax(pergunta) {
         const resposta = await fetch("http://localhost:3000/perguntar",{
             
             method: "POST",
-            Headers: {
-                    "Content-Type": "aplication/json"
+            headers: {
+                    "Content-Type": "application/json"
             },
             body: JSON.stringify({
                 pergunta: pergunta
