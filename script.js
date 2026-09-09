@@ -25,9 +25,14 @@ document.addEventListener("DOMContentLoaded", function () {
               if(!conversaAtiva){
             conversaAtiva = true;
             botao.textContent = "Encerrar conversa";
+              
+                  try { 
             reconhecimento.start();
+            console.log("RECONHECIMENTO INICIADO"); 
+            } catch (erro){
+                console.log("ERRO AO INICIAR", erro);
            
-        } else {
+         else {
             conversaAtiva = false
             botao.textContent = "Falar";
             reconhecimento.stop();
