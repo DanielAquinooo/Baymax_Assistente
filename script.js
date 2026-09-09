@@ -196,3 +196,6 @@ async function perguntaAoBaymax(pergunta) {
         console.erro("Error ao conectar ao servidor:", erro);
         falar("Não consegui me conectar ao servidor:");
     }}
+
+//teste
+perguntarAoBaymax("Olá, Baymax!");
