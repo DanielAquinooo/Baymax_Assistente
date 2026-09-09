@@ -33,7 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
             botao.textContent = "Falar";
             reconhecimento.stop();
         }
-                
+             perguntarAoBaymax(texto);
+   
     });
 
 
@@ -53,8 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("Você disse:", texto);
 
-        perguntarAoBaymaxresponder(texto);
-
+        
     };
 
 
