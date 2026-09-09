@@ -197,5 +197,4 @@ async function perguntaAoBaymax(pergunta) {
         falar("Não consegui me conectar ao servidor:");
     }}
 
-//teste
-perguntarAoBaymax("Olá, Baymax!");
+
