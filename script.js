@@ -135,7 +135,8 @@ document.addEventListener("DOMContentLoaded", function () {
                             setTimeout(function(){
                                 reconhecimento.start();
                 }, 500);
-
+                     }
+             };
         window.speechSynthesis.speak(mensagem);
 
     }
