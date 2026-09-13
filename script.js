@@ -53,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
             event.results[0][0].transcript.toLowerCase();
 
         console.log("Você disse:", texto);
+        perguntaAoBaymax(texto);
 
         
     };
@@ -181,7 +182,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     };
 
-});
+});
+
 
 if ("serviceWorker" in navigator){
 
