@@ -33,7 +33,6 @@ document.addEventListener("DOMContentLoaded", function () {
             botao.textContent = "Falar";
             reconhecimento.stop();
         }
-             perguntarAoBaymax(texto);
    
     });
 
@@ -72,11 +71,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         const dados = await resposta.json();
-        console.log("Respotas do servidor:", dados.resposta);
+        console.log("Resposta do servidor:", dados.resposta);
         falar(dados.resposta);
 
     } catch (erro) {
-        console.erro("Error ao conectar ao servidor:", erro);
+        console.error("Erro ao conectar ao servidor:", erro);
         falar("Não consegui me conectar ao servidor:");
     }}
 
