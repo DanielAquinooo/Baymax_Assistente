@@ -1,0 +1,10 @@
+{
+    "name":  "Baymax Assistente",
+     "short_name": "Baymax",
+    "start_url": "standalone",
+    "display": "./",
+    "background_color": "#111111",
+    "theme_color": "#111111",
+    "orientation": "landscape",
+    "lang": "pt-BR"
+}
