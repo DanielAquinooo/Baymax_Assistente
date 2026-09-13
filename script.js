@@ -53,6 +53,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
         console.log("Você disse:", texto);
         perguntaAoBaymax(texto);
+        
+    if (texto.includes("que horas são") ||
+        texto.includes("que horas") ||
+        texto.includes("horas")) {
+
+        const agora = new Date();
+
+        const horas = agora.getHours().toString().padStart(2, "0");
+        const minutos = agora.getMinutes().toString().padStart(2, "0");
+
+        falar(`Agora são ${horas} horas e ${minutos} minutos.`);
+
+    } else {
+
+        perguntaAoBaymax(texto);
+
+    }
+
+};
 
         
     };
