@@ -44,6 +44,7 @@ app.post("/perguntar", async(req, res) => {
             });
         }
         });
+console.log("Cheguei antes do app.listen");
 app.listen(PORT, () =>{
     console.log(`Baymax backend rodando em http://localhost:${PORT}`);
 });
