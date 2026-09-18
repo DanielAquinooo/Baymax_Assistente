@@ -211,9 +211,11 @@ if ("serviceWorker" in navigator){
             console.log("Baymax: Service Worker registrado!");
         })
         .catch(function(erro){
-            console.log("Erro no service Worker:", erro);
+            console.log("Erro no service Worker:", erro
+                       );
         });
-    });
+    }
+    );
 }
 
 
