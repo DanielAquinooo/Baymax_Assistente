@@ -74,8 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
 };
 }
 )    
-        
-    };
+    
 
     async function perguntaAoBaymax(pergunta) {
     try{
