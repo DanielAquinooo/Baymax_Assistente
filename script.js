@@ -57,7 +57,7 @@ async function perguntaAoBaymax(pergunta) {
     try{
             console.log("Enviando para o servidor:", pergunta);
             const resposta = await fetch(
-                "http://192.168.0.22:3000/perguntar",
+                "https://baymax-backend-1zv8.onrender.com",
                 {
                     method: "POST",
 
