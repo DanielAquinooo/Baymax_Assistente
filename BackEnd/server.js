@@ -1,12 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const OpenAI = require("openai");
+const { GoogleGenAI } = require("@google/genai");
 
 const app = express ();
-const PORT = 3000;
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
+const PORT = process.env.PORT || 3000;
+const ai = new GoogleGenAI({
+    apiKey: process.env.GEMINI_API_KEY
 });
 
 app.use(cors());
@@ -21,21 +21,16 @@ app.post("/perguntar", async(req, res) => {
         console.log("Pergunta recebida:", pergunta);
 
         try{
-            const resposta = await openai.responses.create({
-                model: "gpt-5.6-Luna",
-                input: [{
-                    role: "system",
-                    content: "Você é o Baymax, um assistente virtual amigável. Responda em português do Brasil de forma clara e natural."
-                },
-                {
-                    role: "user",
-                    content:pergunta
-                }
-            ]
+            const resposta = await ai.models.generateContent({
+                model: "gemini-3.6-flash",
+                contents: pergunta,
+                config: {
+                        systemInstruction: "Você é o Baymax, um assistente virtual amigável. Responda em português do Brasil de forma clara e natural."
+                }            
 });
-    console.log("Resposta da IA:", resposta.output_text);
+    console.log("Resposta da IA:", resposta.text);
     res.json({
-        resposta: resposta.output_text
+        resposta: resposta.text
     });
         } catch (erro){
             console.error("Error na IA:", erro);
@@ -44,3 +39,6 @@ app.post("/perguntar", async(req, res) => {
             });
         }
         });
+ app.listen(PORT, () =>{
+    console.log(`Baymax backend rodando em http://localhost:${PORT}`);
+});
